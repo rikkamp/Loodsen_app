@@ -53,6 +53,15 @@ class ActivityController extends Controller
         return response()->json($yeet);
     }
 
+    public function delete (int $id) {
+        $data = GameModel::find($id);
+        if(isset($data)) {
+            $data->delete();
+            return response()->json("Data deleted", 418);
+        } else {
+            return response()->json("index does not exist", 404);
+        }
+    }
     public function get () {
         $result = DB::SELECT('SELECT * FROM game ORDER BY RAND() LIMIT 1');
         return response()->json($result);

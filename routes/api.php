@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::put('/game', 'ActivityController@create');
 Route::get('/game', 'ActivityController@get');
 Route::post('/game/{id}', 'ActivityController@update');
+Route::delete('/game/{id}', 'ActivityController@delete');
