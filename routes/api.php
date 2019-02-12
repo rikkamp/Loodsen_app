@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::put('/game', 'ActivityController@create')->middleware('cors');
-Route::get('/game', 'ActivityController@get')->middleware('cors');
-Route::post('/game/{id}', 'ActivityController@update')->middleware('cors');
-Route::delete('/game/{id}', 'ActivityController@delete')->middleware('cors');
+Route::put('/game', 'ActivityController@create');
+Route::get('/game', 'ActivityController@get');
+Route::post('/game/{id}', 'ActivityController@update');
+Route::delete('/game/{id}', 'ActivityController@delete');
