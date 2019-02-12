@@ -19,16 +19,16 @@ class ActivityController extends Controller
             'gameNotes' => 'max:2000',
             'gameTut' => 'required|max:2000'
         ]);
-        $yeet = GameModel::create();
-        $yeet->gameTitle = $request->gameTitle;
-        $yeet->gameReq = $request->gameReq;
-        $yeet->gameRules = $request->gameRules;
-        $yeet->gameDesc = $request->gameDesc;
-        $yeet->gamePlayers = $request->gamePlayers;
-        $yeet->gameNotes = $request->gameNotes;
-        $yeet->gameTut = $request->gameTut;
-        $yeet->save();
-        return response()->json($yeet);
+        $response = GameModel::create();
+        $response->gameTitle = $request->gameTitle;
+        $response->gameReq = $request->gameReq;
+        $response->gameRules = $request->gameRules;
+        $response->gameDesc = $request->gameDesc;
+        $response->gamePlayers = $request->gamePlayers;
+        $response->gameNotes = $request->gameNotes;
+        $response->gameTut = $request->gameTut;
+        $response->save();
+        return response()->json($response);
     }
 
     public function update (int $id, Request $request) {
@@ -41,16 +41,16 @@ class ActivityController extends Controller
             'gameNotes' => 'max:2000',
             'gameTut' => 'required|max:2000'
         ]);
-        $yeet = GameModel::find($id);
-        $yeet->gameTitle = $request->gameTitle;
-        $yeet->gameReq = $request->gameReq;
-        $yeet->gameRules = $request->gameRules;
-        $yeet->gameDesc = $request->gameDesc;
-        $yeet->gamePlayers = $request->gamePlayers;
-        $yeet->gameNotes = $request->gameNotes;
-        $yeet->gameTut = $request->gameTut;
-        $yeet->save();
-        return response()->json($yeet);
+        $response = GameModel::find($id);
+        $response->gameTitle = $request->gameTitle;
+        $response->gameReq = $request->gameReq;
+        $response->gameRules = $request->gameRules;
+        $response->gameDesc = $request->gameDesc;
+        $response->gamePlayers = $request->gamePlayers;
+        $response->gameNotes = $request->gameNotes;
+        $response->gameTut = $request->gameTut;
+        $response->save();
+        return response()->json($response);
     }
 
     public function delete (int $id) {
